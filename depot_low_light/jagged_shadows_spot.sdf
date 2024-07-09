@@ -8,24 +8,25 @@
     <include>
       <uri>file://depot</uri>
     </include>
-  <!--spot light modified from lights_render.sdf-->
+    <!--spot light modified from lights_render.sdf-->
     <light type="spot" name="spot">
       <pose>0 0 5 0 0 0</pose>
       <diffuse>1 1 1 1</diffuse>
-      <specular>.2 .2 .2 1</specular>
+      <specular>0 0 0 0</specular>
       <attenuation>
-        <range>5</range>
-        <constant>0.3</constant>
-        <linear>0.4</linear>
-        <quadratic>0.001</quadratic>
+        <range>50</range>
+        <constant>0</constant>
+        <linear>0</linear>
+        <quadratic>0</quadratic>
       </attenuation>
-      <direction>1 1 -1.5</direction>
       <spot>
         <inner_angle>0.1</inner_angle>
         <outer_angle>2</outer_angle>
         <falloff>0.8</falloff>
       </spot>
       <cast_shadows>true</cast_shadows>
+      <direction>1 1 -1.5</direction>
+      <intensity>0.1</intensity>
     </light>
   </world>
 </sdf>
