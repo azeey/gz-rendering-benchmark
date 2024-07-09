@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="default">
+    <scene>
+      <ambient>0.1 0.1 0.1</ambient>
+      <grid>false</grid>
+    </scene>
+    <gui>
+      <plugin filename="MinimalScene" name="3D View">
+        <engine>ogre2</engine>
+        <scene>scene</scene>
+        <camera_pose>0 0 2 0 1.57 1.57</camera_pose>
+        <camera_clip>
+          <near>0.001</near>
+        </camera_clip>
+      </plugin>
+      <plugin filename="GzSceneManager" name="Scene Manager"/>
+      <plugin filename="InteractiveViewControl" name="Interactive view control"/>
+    </gui>
+    <light type="directional" name="sun">
+      <pose>0 0 5 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.0 0.0 0.0 0</specular>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1.0</intensity>
+      <direction>0 0 -1</direction>
+      <visualize>false</visualize>
+    </light>
+    <model name="test_gradient">
+      <link name="base">
+        <visual name="v1">
+          <geometry>
+            <plane>
+              <size>2 2 </size>
+              <normal>0 0 1</normal>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <pbr>
+              <metal>
+                <albedo_map>materials/gradients.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
+
+
