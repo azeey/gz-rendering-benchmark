@@ -8,18 +8,18 @@ In [Ogre2Scene.cc](https://github.com/gazebosim/gz-rendering/blob/gz-rendering8/
 
 #### Point light with `texSize = 2048u` vs. `texSize = 4096u`:
 
-<img src="./jagged shadows texSize/point light texsize 2048u.png" width ="450"/> <img src="./jagged shadows texSize/point light texsize 4096u.png" width ="450"/>
+<img src="./img/point light texsize 2048u.png" width ="450"/> <img src="./img/point light texsize 4096u.png" width ="450"/>
 
 #### Directional light with `texSize = 2048u` vs. `texSize = 4096u`:
 
-<img src="./jagged shadows texSize/directional light texsize 2048u.png" width ="450"/> <img src="./jagged shadows texSize/directional light texsize 4096u.png" width ="450"/>
+<img src="./img/directional light texsize 2048u.png" width ="450"/> <img src="./img/directional light texsize 4096u.png" width ="450"/>
 
 Spotlights are interesting - the larger the `<outer_angle>` is, the more jagged the shadows are. When comparing `texSize = 2048u` vs. `texSize = 4096u`, the difference in shadow texture resolution is minimal for `<outer_angle> = 1`, whereas it is more noticeable for `<outer_angle> = 2`.
 
 #### Spot light with `texSize = 2048u` vs. `texSize = 4096u`, where `<outer_angle> = 1`:
 
-<img src="./jagged shadows texSize/spot light outang 1 texsize 2048u.png" width ="450"/> <img src="./jagged shadows texSize/spot light outang 1 texsize 4096u.png" width ="450"/>
+<img src="./img/spot light outang 1 texsize 2048u.png" width ="450"/> <img src="./img/spot light outang 1 texsize 4096u.png" width ="450"/>
 
 #### Spot light with `texSize = 2048u` vs. `texSize = 4096u`, where `<outer_angle> = 2`:
 
-<img src="./jagged shadows texSize/spot light outang 2 texsize 2048u.png" width ="450"/> <img src="./jagged shadows texSize/spot light outang 2 texsize 4096u.png" width ="450"/>
+<img src="./img/spot light outang 2 texsize 2048u.png" width ="450"/> <img src="./img/spot light outang 2 texsize 4096u.png" width ="450"/>
