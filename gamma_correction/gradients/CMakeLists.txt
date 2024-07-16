@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
-project(gz-rendering-simple-demo)
+project(gz-rendering-gradients)
 
 find_package(gz-rendering8)
 
@@ -30,16 +30,16 @@ list (SORT _variableNames)
 foreach (_variableName ${_variableNames})
   message(STATUS "${_variableName}=${${_variableName}}")
 endforeach()
-add_executable(simple_demo Main.cc GlutWindow.cc)
+add_executable(gradients Main.cc GlutWindow.cc)
 
-target_link_libraries(simple_demo
+target_link_libraries(gradients
   ${GLUT_LIBRARIES}
   ${OPENGL_LIBRARIES}
   ${GLEW_LIBRARIES}
   ${GZ-RENDERING_LIBRARIES}
   )
 
-add_custom_command(TARGET simple_demo POST_BUILD
+add_custom_command(TARGET gradients POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_directory
   ${CMAKE_SOURCE_DIR}/media
-  $<TARGET_FILE_DIR:simple_demo>/media)
+  $<TARGET_FILE_DIR:gradients>/media)

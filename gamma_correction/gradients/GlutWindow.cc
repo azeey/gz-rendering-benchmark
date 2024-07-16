@@ -116,7 +116,7 @@ void displayCB()
   glDrawPixels(imgw, imgh, GL_RGB, GL_UNSIGNED_BYTE, data);
 
   glutSwapBuffers();
-  updateCameras();
+  // updateCameras();
 }
 
 //////////////////////////////////////////////////
@@ -155,7 +155,7 @@ void initContext()
   glutInitDisplayMode(GLUT_DOUBLE);
   glutInitWindowPosition(0, 0);
   glutInitWindowSize(imgw, imgh);
-  glutCreateWindow("Simple Demo");
+  glutCreateWindow("Gradients");
   glutDisplayFunc(displayCB);
   glutIdleFunc(idleCB);
   glutKeyboardFunc(keyboardCB);

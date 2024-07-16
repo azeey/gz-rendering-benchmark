@@ -43,7 +43,7 @@ const std::string RESOURCE_PATH =
 void buildScene(ScenePtr _scene)
 {
   // initialize _scene
-  _scene->SetAmbientLight(0.3, 0.3, 0.3);
+  _scene->SetAmbientLight(0.1, 0.1, 0.1);
   VisualPtr root = _scene->RootVisual();
 
   // create directional light
@@ -53,105 +53,6 @@ void buildScene(ScenePtr _scene)
   light0->SetSpecularColor(0.0, 0.0, 0.0);
   root->AddChild(light0);
 
-  // // create point light
-  // PointLightPtr light1 = _scene->CreatePointLight();
-  // light1->SetDiffuseColor(0.5, 0.5, 0.5);
-  // light1->SetSpecularColor(0.5, 0.5, 0.5);
-  // light1->SetLocalPosition(5, -5, 10);
-  // root->AddChild(light1);
-
-  // create point light
-  // PointLightPtr light2 = _scene->CreatePointLight();
-  // light2->SetDiffuseColor(0.5, 0.5, 0.5);
-  // light2->SetSpecularColor(0.5, 0.5, 0.5);
-  // light2->SetLocalPosition(3, 5, 5);
-  // root->AddChild(light2);
-
-  // create green material
-  MaterialPtr green = _scene->CreateMaterial();
-  green->SetAmbient(0.0, 0.5, 0.0);
-  green->SetDiffuse(0.0, 0.7, 0.0);
-  green->SetSpecular(0.5, 0.5, 0.5);
-  green->SetShininess(50);
-  green->SetReflectivity(0);
-
-  // create center visual
-  VisualPtr center = _scene->CreateVisual();
-  center->AddGeometry(_scene->CreateSphere());
-  center->SetLocalPosition(3, 0, 0);
-  center->SetLocalScale(0.1, 0.1, 0.1);
-  center->SetMaterial(green);
-  root->AddChild(center);
-
-//! [red material]
-  // create red material
-  MaterialPtr red = _scene->CreateMaterial();
-  red->SetAmbient(0.5, 0.0, 0.0);
-  red->SetDiffuse(1.0, 0.0, 0.0);
-  red->SetSpecular(0.5, 0.5, 0.5);
-  red->SetShininess(50);
-  red->SetReflectivity(0);
-  red->SetRenderOrder(3);
-//! [red material]
-
-  // create sphere visual
-  VisualPtr sphere = _scene->CreateVisual();
-  sphere->AddGeometry(_scene->CreateSphere());
-  sphere->SetOrigin(0.0, -0.5, 0.0);
-  sphere->SetLocalPosition(3, 0, 0);
-  sphere->SetLocalRotation(0, 0, 0);
-  sphere->SetLocalScale(1, 1, 1);
-  sphere->SetMaterial(red);
-  root->AddChild(sphere);
-
-  // create blue material
-  MaterialPtr blue = _scene->CreateMaterial();
-  blue->SetAmbient(0.0, 0.0, 0.3);
-  blue->SetDiffuse(0.0, 0.0, 0.8);
-  blue->SetSpecular(0.5, 0.5, 0.5);
-  blue->SetShininess(50);
-  blue->SetReflectivity(0);
-
-  // create box visual
-  // VisualPtr box = _scene->CreateVisual();
-  // box->AddGeometry(_scene->CreateBox());
-  // box->SetOrigin(0.0, 0.5, 0.0);
-  // box->SetLocalPosition(3, 0, 0);
-  // box->SetLocalRotation(GZ_PI / 4, 0, GZ_PI / 3);
-  // box->SetLocalScale(1, 2.5, 1);
-  // box->SetMaterial(blue);
-  // root->AddChild(box);
-
-  // create ellipsoid visual
-  VisualPtr ellipsoidVisual = _scene->CreateVisual();
-  auto ellipsoid = _scene->CreateSphere();
-  ellipsoidVisual->SetLocalScale(1.2, 0.7, 0.5);
-  ellipsoidVisual->AddGeometry(ellipsoid);
-  ellipsoidVisual->SetLocalPosition(3, -1, 0);
-  ellipsoidVisual->SetMaterial(green);
-  root->AddChild(ellipsoidVisual);
-
-//! [white material]
-  // create white material
-  MaterialPtr white = _scene->CreateMaterial();
-  white->SetAmbient(0.5, 0.5, 0.5);
-  white->SetDiffuse(0.8, 0.8, 0.8);
-  white->SetReceiveShadows(true);
-  white->SetReflectivity(0);
-  white->SetRenderOrder(0);
-//! [white material]
-
-  VisualPtr capsuleVisual = _scene->CreateVisual();
-  CapsulePtr capsule = _scene->CreateCapsule();
-  capsule->SetLength(0.2);
-  capsule->SetRadius(0.2);
-  capsuleVisual->AddGeometry(capsule);
-  capsuleVisual->SetOrigin(0.0, 0.0, 0.0);
-  capsuleVisual->SetLocalPosition(4, 2, 0);
-  capsuleVisual->SetLocalScale(1, 1, 1);
-  capsuleVisual->SetMaterial(red);
-  root->AddChild(capsuleVisual);
-
   // create plane material
   MaterialPtr gradientMat = _scene->CreateMaterial();
   gradientMat->SetTexture(common::joinPaths(RESOURCE_PATH, "gradients.png"));
@@ -159,24 +60,12 @@ void buildScene(ScenePtr _scene)
   // create plane visual
   VisualPtr plane = _scene->CreateVisual();
   plane->AddGeometry(_scene->CreatePlane());
-  plane->SetLocalScale(5, 8, 1);
-  plane->SetLocalPosition(3, 0, -0.5);
+  plane->SetLocalScale(5, 5, 1);
+  plane->SetLocalRotation(GZ_PI / 4, 0.0, - GZ_PI / 2); 
+  plane->SetLocalPosition(2.5, 0, -2.5);
   plane->SetMaterial(gradientMat);
   plane->SetMaterial(gradientMat);
   root->AddChild(plane);
-
-  VisualPtr plane2 = _scene->CreateVisual();
-  plane2->AddGeometry(_scene->CreatePlane());
-  plane2->SetLocalScale(5, 8, 1);
-  plane2->SetLocalPosition(4, 0.5, -0.5);
-  plane2->Scale(0.1, 0.1, 1);
-  plane2->SetMaterial(red);
-  root->AddChild(plane2);
-
-  // create axis visual
-  VisualPtr axis = _scene->CreateAxisVisual();
-  axis->SetLocalPosition(4.0, 0.5, -0.4);
-  root->AddChild(axis);
 
   // create camera
   CameraPtr camera = _scene->CreateCamera("camera");
