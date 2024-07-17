@@ -64,7 +64,6 @@ void buildScene(ScenePtr _scene)
   plane->SetLocalRotation(GZ_PI / 4, 0.0, - GZ_PI / 2); 
   plane->SetLocalPosition(2.5, 0, -2.5);
   plane->SetMaterial(gradientMat);
-  plane->SetMaterial(gradientMat);
   root->AddChild(plane);
 
   // create camera
