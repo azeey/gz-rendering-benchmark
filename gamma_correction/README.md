@@ -51,3 +51,7 @@ Modified the `simple_demo` (no QML) program to display gradients texture (see `g
 <img src="./img/demo gradients_qml default PFG_RGBA8_UNORM_SRGB.png" width ="300"/> <img src="./img/demo gradients_qml force PFG_RGBA8_UNORM.png" width ="300"/>
 
 Modified the `simple_demo_qml` program to display gradients texture (see `gradients_qml demo`). `gradients_qml` demo does not have manual gamma correction support from QML, so it is expected that both outputs look like Gradients (no QML)'s forced linear color space output.
+
+### adapted `gl_gamma` fix 
+
+<img src="./img/depot fix gl_gamma.png" width ="900"/> <img src="./img/demo gradients_qml fix gl_gamma.png" width ="300"/>
