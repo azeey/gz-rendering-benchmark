@@ -320,6 +320,7 @@ void TextureNode::NewTexture(int _id, const QSize &_size)
 // called when the window emits beforeRendering
 void TextureNode::PrepareNode()
 {
+    // glEnable(GL_FRAMEBUFFER_SRGB);
     this->mutex.lock();
     int newId = this->id;
     QSize size = this->size;

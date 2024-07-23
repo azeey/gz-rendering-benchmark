@@ -39,19 +39,20 @@ const std::string RESOURCE_PATH =
 void BuildScene(gz::rendering::ScenePtr _scene)
 {
   // initialize _scene
-  _scene->SetAmbientLight(0.1, 0.1, 0.1);
+  _scene->SetAmbientLight(1.0, 1.0, 1.0);
   VisualPtr root = _scene->RootVisual();
 
   // create directional light
-  DirectionalLightPtr light0 = _scene->CreateDirectionalLight();
-  light0->SetDirection(0.0, 0.0, -1);
-  light0->SetDiffuseColor(1.0, 1.0, 1.0);
-  light0->SetSpecularColor(0.0, 0.0, 0.0);
-  root->AddChild(light0);
+  // DirectionalLightPtr light0 = _scene->CreateDirectionalLight();
+  // light0->SetDirection(0.0, 0.0, -1);
+  // light0->SetDiffuseColor(1.0, 1.0, 1.0);
+  // light0->SetSpecularColor(0.0, 0.0, 0.0);
+  // root->AddChild(light0);
 
   // create plane material
   MaterialPtr gradientMat = _scene->CreateMaterial();
   gradientMat->SetTexture(common::joinPaths(RESOURCE_PATH, "gradients.png"));
+  gradientMat->SetDiffuse(1.0, 1.0, 1.0);
 
   // create plane visual
   VisualPtr plane = _scene->CreateVisual();

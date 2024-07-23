@@ -1,3 +1,0 @@
-/home/athenaz/Documents/gz-rendering-benchmark/gamma_correction/gradients/build/CMakeFiles/simple_demo.dir
-/home/athenaz/Documents/gz-rendering-benchmark/gamma_correction/gradients/build/CMakeFiles/edit_cache.dir
-/home/athenaz/Documents/gz-rendering-benchmark/gamma_correction/gradients/build/CMakeFiles/rebuild_cache.dir

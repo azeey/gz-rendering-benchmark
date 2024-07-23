@@ -108,7 +108,8 @@ void displayCB()
 #endif
 
   unsigned char *data = g_image->Data<unsigned char>();
-
+  
+  // glEnable(GL_FRAMEBUFFER_SRGB); 
   glClearColor(0.5, 0.5, 0.5, 1);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glPixelZoom(1, -1);
