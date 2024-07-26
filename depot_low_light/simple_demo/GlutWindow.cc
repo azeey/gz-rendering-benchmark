@@ -32,7 +32,7 @@
 #include <mutex>
 
 #include <gz/common/Console.hh>
-// #include <gz/common/Timer.hh>
+#include <gz/common/Timer.hh>
 #include <gz/rendering/Camera.hh>
 #include <gz/rendering/Image.hh>
 #include <gz/rendering/Scene.hh>
@@ -51,7 +51,10 @@ ir::CameraPtr g_camera;
 ir::CameraPtr g_currCamera;
 unsigned int g_cameraIndex = 0;
 ir::ImagePtr g_image;
+
 std::chrono::steady_clock::time_point prevUpdateTime;
+gz::common::Timer timer;
+std::ofstream fpsStats;
 
 bool g_initContext = false;
 
@@ -123,19 +126,16 @@ void displayCB()
       now - prevUpdateTime).count() / 1000.0;
   prevUpdateTime = now;
   
-  printf("duration: %f\n", duration);
-  printf("FPS: %f\n\n", 1.0 / duration);
-
-  // t.Start();
-  // printf("%f\n", t.ElapsedTime().count());
+  // printf("duration: %f\n", duration);
+  // printf("FPS: %f\n\n", 1.0 / duration);
 
   // fps = num frames / seconds
-  // t.Start();
-  // printf("started timer\n");
-  // std::this_thread::sleep_for(std::chrono::seconds(5));
-  // printf("count: %f\n", t.ElapsedTime().count());
-  // t.Stop();
-  // printf("stopped timer\n");
+  if (timer.ElapsedTime().count() < 10.0) {
+    // printf("count: %f\n", count);
+    fpsStats << 1.0 / duration << "\n";
+  } else {
+    exit(0);
+  }
 
   glutSwapBuffers();
   updateCameras();
@@ -212,7 +212,12 @@ void run(std::vector<ir::CameraPtr> _cameras)
 
   g_cameras = _cameras;
   initCamera(_cameras[0]);
+
   initContext();
+
+  fpsStats.open("fps_stats.txt");
+  timer.Start();
+
   printUsage();
 
 #if __APPLE__
