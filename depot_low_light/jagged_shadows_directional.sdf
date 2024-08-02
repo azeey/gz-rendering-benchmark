@@ -21,7 +21,21 @@
       </attenuation>
       <cast_shadows>true</cast_shadows>
       <direction>1 1 -1.5</direction>
-      <intensity>0.1</intensity>
+      <intensity>1.0</intensity>
+    </light>
+    <light type="directional" name="sun2"> 
+      <pose>0 0 5 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0 0 0 0</specular>
+      <attenuation>
+        <range>50</range>
+        <constant>0</constant>
+        <linear>0</linear>
+        <quadratic>0</quadratic>
+      </attenuation>
+      <cast_shadows>true</cast_shadows>
+      <direction>1 -1 -1.5</direction>
+      <intensity>1.0</intensity>
     </light>
   </world>
 </sdf>

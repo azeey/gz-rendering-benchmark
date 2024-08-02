@@ -26,7 +26,7 @@
       </spot>
       <cast_shadows>true</cast_shadows>
       <direction>1 1 -1.5</direction>
-      <intensity>0.1</intensity>
+      <intensity>1.0</intensity>
     </light>
   </world>
 </sdf>
