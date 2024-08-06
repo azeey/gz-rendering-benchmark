@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="default">
+    <scene>
+      <background>0.1 0.1 0.1</background>
+      <ambient>0.0 0.0 0.0</ambient>
+    </scene>
+    <include>
+      <uri>file://depot</uri>
+    </include>
+    <light type="directional" name="sun"> 
+      <pose>0 0 5 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0 0 0 0</specular>
+      <attenuation>
+        <range>50</range>
+        <constant>0</constant>
+        <linear>0</linear>
+        <quadratic>0</quadratic>
+      </attenuation>
+      <cast_shadows>true</cast_shadows>
+      <direction>1 1 -1.5</direction>
+      <intensity>1.0</intensity>
+    </light>
+    <light type="point" name="fan_light">
+      <pose>0 0 5 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.0 0.0 0.0 0</specular>
+      <attenuation>
+          <range>50</range>
+          <linear>0</linear>
+          <constant>0</constant>
+          <quadratic>0</quadratic>
+      </attenuation>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1.0</intensity>
+    </light>
+    <light type="spot" name="spot">
+      <pose>0 0 5 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0 0 0 0</specular>
+      <attenuation>
+        <range>50</range>
+        <constant>0</constant>
+        <linear>0</linear>
+        <quadratic>0</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0.1</inner_angle>
+        <outer_angle>2</outer_angle>
+        <falloff>0.8</falloff>
+      </spot>
+      <cast_shadows>true</cast_shadows>
+      <direction>1 1 -1.5</direction>
+      <intensity>1.0</intensity>
+    </light>
+    <light type="directional" name="sun2"> 
+      <pose>0 0 -5 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0 0 0 0</specular>
+      <attenuation>
+        <range>50</range>
+        <constant>0</constant>
+        <linear>0</linear>
+        <quadratic>0</quadratic>
+      </attenuation>
+      <cast_shadows>true</cast_shadows>
+      <direction>1 -1 -1.5</direction>
+      <intensity>1.0</intensity>
+    </light>
+  </world>
+</sdf>
+
