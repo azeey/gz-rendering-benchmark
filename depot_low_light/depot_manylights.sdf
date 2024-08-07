@@ -5,6 +5,17 @@
       <background>0.1 0.1 0.1</background>
       <ambient>0.0 0.0 0.0</ambient>
     </scene>
+
+    <gui>
+      <plugin filename="MinimalScene" name="3D View">
+        <engine>ogre2</engine>
+        <!-- <tex_size>4096</tex_size> -->
+      </plugin>
+
+      <plugin filename="GzSceneManager" name="Scene Manager"/>
+      <plugin filename="InteractiveViewControl" name="Interactive view control"/>
+    </gui>
+
     <include>
       <uri>file://depot</uri>
     </include>
@@ -20,7 +31,7 @@
       </attenuation>
       <cast_shadows>true</cast_shadows>
       <direction>1 1 -1.5</direction>
-      <intensity>1.0</intensity>
+      <intensity>0.5</intensity>
     </light>
     <light type="point" name="fan_light">
       <pose>0 0 5 0 0 0</pose>
@@ -35,7 +46,7 @@
       <cast_shadows>true</cast_shadows>
       <intensity>1.0</intensity>
     </light>
-    <light type="spot" name="spot">
+    <!-- <light type="spot" name="spot">
       <pose>0 0 5 0 0 0</pose>
       <diffuse>1 1 1 1</diffuse>
       <specular>0 0 0 0</specular>
@@ -53,8 +64,8 @@
       <cast_shadows>true</cast_shadows>
       <direction>1 1 -1.5</direction>
       <intensity>1.0</intensity>
-    </light>
-    <light type="directional" name="sun2"> 
+    </light> -->
+    <!-- <light type="directional" name="sun2"> 
       <pose>0 0 -5 0 0 0</pose>
       <diffuse>1 1 1 1</diffuse>
       <specular>0 0 0 0</specular>
@@ -67,7 +78,7 @@
       <cast_shadows>true</cast_shadows>
       <direction>1 -1 -1.5</direction>
       <intensity>1.0</intensity>
-    </light>
+    </light> -->
   </world>
 </sdf>
 
