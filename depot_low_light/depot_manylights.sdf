@@ -9,7 +9,9 @@
     <gui>
       <plugin filename="MinimalScene" name="3D View">
         <engine>ogre2</engine>
-        <!-- <tex_size>4096</tex_size> -->
+        <shadows>
+          <texture_size light_type="directional">16384</texture_size>
+        </shadows>
       </plugin>
 
       <plugin filename="GzSceneManager" name="Scene Manager"/>
