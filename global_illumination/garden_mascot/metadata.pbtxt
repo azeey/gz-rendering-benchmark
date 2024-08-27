@@ -1,0 +1,16 @@
+model {
+  file: "model.sdf"
+  file_format {
+    version {
+      major: 1
+      minor: 9
+    }
+    name: "sdf"
+  }
+}
+name: "Garden Mascot"
+description: "Mascot for Gazebo Garden"
+version: 1
+authors {
+}
+

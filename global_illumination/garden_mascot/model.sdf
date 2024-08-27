@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+    <model name="garden_mascot">
+        <link name="base_link">
+            <collision name="collision">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>meshes/garden_mascot.dae</uri>
+                        <scale>50 50 50</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+            <visual name="White_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/garden_mascot.dae</uri>
+                        <submesh>
+                            <name>White</name>
+                            <center>false</center>
+                        </submesh>
+                        <scale>50 50 50</scale>
+                    </mesh>
+                </geometry>
+                <material>
+                    <diffuse>1.0 1.0 1.0 1.0</diffuse>
+                    <specular>1.0 1.0 1.0 1.0</specular>
+                </material>
+            </visual>
+            <visual name="Black_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/garden_mascot.dae</uri>
+                        <submesh>
+                            <name>Black</name>
+                            <center>false</center>
+                        </submesh>
+                        <scale>50 50 50</scale>
+                    </mesh>
+                </geometry>
+                <material>
+                    <diffuse>0 0 0 1</diffuse>
+                    <specular>1.0 1.0 1.0 1.0</specular>
+                </material>
+            </visual>
+            <visual name="Green_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/garden_mascot.dae</uri>
+                        <submesh>
+                            <name>Green</name>
+                            <center>false</center>
+                        </submesh>
+                        <scale>50 50 50</scale>
+                    </mesh>
+                </geometry>
+                <material>
+                    <diffuse>1 1 1 1</diffuse>
+                    <specular>1.0 1.0 1.0 1.0</specular>
+                    <pbr>
+                      <metal>
+                        <metalness>0</metalness>
+                        <roughness>1</roughness>
+                        <albedo_map>materials/textures/albedo_map.png</albedo_map>
+                      </metal>
+                    </pbr>
+                </material>
+            </visual>
+        </link>
+    </model>
+</sdf>

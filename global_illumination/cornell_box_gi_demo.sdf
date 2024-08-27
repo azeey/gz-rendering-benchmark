@@ -68,17 +68,6 @@
             <topic>camera</topic>
         </plugin>
 
-        <plugin filename="GlobalIlluminationVct" name="Global Illumination Vct">
-            <!-- <enabled>true</enabled> -->
-            <!-- <resolution>16 16 16</resolution> -->
-            <!-- <octantCount>1 1 1</octantCount> -->
-            <!-- <bounceCount>6</bounceCount> -->
-            <!-- <highQuality>true</highQuality> -->
-            <!-- <anisotropic>true</anisotropic> -->
-            <!-- <thinWallCounter>1.0</thinWallCounter> -->
-            <!-- <conserveMemory>false</conserveMemory> -->
-            <!-- <debugVisMode>none</debugVisMode> -->
-        </plugin>
 
         <plugin filename="GzSceneManager" name="Scene Manager"/>
         <plugin filename="InteractiveViewControl" name="Interactive view control"/>
@@ -109,7 +98,7 @@
 
         <!--lighting-->
         <light type="point" name="ceiling_light">
-        <pose>0 0 7.5 0 0 0</pose>
+        <pose>0 0 7.0 0 0 0</pose>
         <diffuse>1 1 1 1</diffuse>
         <specular>0.0 0.0 0.0 0</specular>
         <attenuation>
@@ -119,7 +108,7 @@
             <quadratic>0</quadratic>
         </attenuation>
         <cast_shadows>true</cast_shadows>
-        <visualize>false</visualize>
+        <visualize>true</visualize>
         <intensity>1.0</intensity>
         </light>
 
@@ -168,9 +157,9 @@
                 </box>
             </geometry>
             <material>
-                <ambient>0 1 0 1</ambient>
-                <diffuse>0 1 0 1</diffuse>
-                <specular>0 1 0 1</specular>
+                <ambient>0 0.8 0 1</ambient>
+                <diffuse>0 0.8 0 1</diffuse>
+                <specular>0 0.8 0 1</specular>
             </material>
             </visual>
         </link>
@@ -256,7 +245,7 @@
 
         <!--scene objects-->
         <include>
-            <pose>0 0 1 0 0 -1.57</pose>
+            <pose>0 0 0.0 0 0 -1.57</pose>
             <uri>
               garden_mascot
             </uri>
