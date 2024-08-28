@@ -67,17 +67,8 @@
             <topic>camera</topic>
         </plugin>
 
-        <plugin filename="GlobalIlluminationVct" name="Global Illumination Vct">
-            <!-- <enabled>true</enabled> -->
-            <!-- <resolution>16 16 16</resolution> -->
-            <!-- <octantCount>1 1 1</octantCount> -->
-            <!-- <bounceCount>6</bounceCount> -->
-            <!-- <highQuality>true</highQuality> -->
-            <!-- <anisotropic>true</anisotropic> -->
-            <!-- <thinWallCounter>1.0</thinWallCounter> -->
-            <!-- <conserveMemory>false</conserveMemory> -->
-            <!-- <debugVisMode>none</debugVisMode> -->
-        </plugin>
+        <!-- <plugin filename="GlobalIlluminationVct" name="Global Illumination Vct">
+        </plugin> -->
 
         <plugin filename="GzSceneManager" name="Scene Manager"/>
         <plugin filename="InteractiveViewControl" name="Interactive view control"/>
